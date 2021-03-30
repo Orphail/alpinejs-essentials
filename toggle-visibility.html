@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+<!--    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">-->
+    <style>
+        .active {
+            color :blue;
+        }
+    </style>
+</head>
+<body>
+    <div x-data="{ currentTab: 'first' }">
+        <button class="btn" @click="currentTab = 'first'" :class="{ 'active': currentTab === 'first'}">First</button>
+        <button class="btn" @click="currentTab = 'second'" :class="{ 'active': currentTab === 'second'}">Second</button>
+        <button class="btn" @click="currentTab = 'third'" :class="{ 'active': currentTab === 'third'}">Third</button>
+
+
+        <div style="border: 1px dotted grey; padding: 1rem; margin-top: 1rem;">
+            <div x-show="currentTab === 'first'">
+                <p>First tab.</p>
+            </div>
+
+            <div x-show="currentTab === 'second'">
+                <p>Second tab.</p>
+            </div>
+
+            <div x-show="currentTab === 'third'">
+                <p>Third tab.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
